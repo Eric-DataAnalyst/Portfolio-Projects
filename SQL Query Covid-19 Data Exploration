@@ -22,7 +22,8 @@ order by 1,2
 
 Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths
-Where location like '%states%'
+--Where location like '%states%'
+--Where location like '%kenya%' 
 and continent is not null 
 order by 1,2
 
@@ -82,6 +83,9 @@ order by 1,2
 
 -- Total Population vs Vaccinations
 -- Shows Percentage of Population that has recieved at least one Covid Vaccine
+
+Select * 
+from PortfolioProject..CovidVaccinations
 
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
