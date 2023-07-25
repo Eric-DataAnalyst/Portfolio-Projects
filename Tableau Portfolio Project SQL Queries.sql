@@ -1,5 +1,5 @@
 /*
-Queries used for Tableau Project
+Queries Used for Tableau Project
 */
 
 
